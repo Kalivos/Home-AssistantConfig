@@ -1,0 +1,45 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+map:
+
+# Text to speech
+tts:
+  - platform: google_translate
+  
+# SSL settings
+http:
+  base_url: !secret duckdns_base_url
+  api_password: !secret api_password
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  
+alexa:
+  
+discovery: !include_dir_merge_list discovery/
+
+media_player: !include_dir_list media/
+sensor: !include_dir_list sensor/
+vacuum: !include_dir_list vacuum/
+
+#ring
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+          
+binary_sensor:
+  - platform: ring
+
+#Smart Life
+tuya:
+  username: !secret smartlife_username
+  password: !secret smartlife_password
+  country_code: 32
+  platform: smart_life
+
+intent_script: !include_dir_named intent/
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

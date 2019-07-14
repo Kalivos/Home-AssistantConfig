@@ -1,0 +1,16 @@
+Router:
+- sensor.hass_uptime
+- sensor.google_wifi_status
+- sensor.google_wifi_uptime
+- sensor.google_wifi_last_restart
+- sensor.google_wifi_current_version
+- sensor.google_wifi_local_ip
+- sensor.google_wifi_new_version
+- sensor.onhub_bytes_received
+- sensor.onhub_kbyte_sec_received
+- sensor.onhub_packets_received
+- sensor.onhub_packets_sent
+- sensor.onhub_packets_sec_received
+- sensor.onhub_packets_sec_sent
+- sensor.onhub_bytes_sent
+- sensor.onhub_kbyte_sec_sent
