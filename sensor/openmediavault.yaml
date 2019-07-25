@@ -1,0 +1,14 @@
+platform: openmediavault
+host: http://192.168.86.53
+username: admin
+password: !secret openmediavault_password
+monitored_conditions:
+  -  hostname
+  -  version
+  -  processor
+  -  kernel
+  -  system_time
+  -  uptime
+  -  load_average
+  -  cpu_usage
+  -  memory_usage

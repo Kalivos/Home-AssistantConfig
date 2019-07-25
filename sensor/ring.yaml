@@ -1,1 +1,2 @@
 platform: ring
+scan_interval: 60

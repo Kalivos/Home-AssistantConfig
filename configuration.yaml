@@ -4,6 +4,12 @@ default_config:
 
 map:
 
+logger:
+  default: critical
+  logs:
+    custom_components.openmediavault: debug
+  
+  
 # Text to speech
 tts:
   - platform: google_translate
@@ -16,7 +22,7 @@ http:
   ssl_key: /ssl/privkey.pem
   
 alexa:
-  
+
 discovery: !include_dir_merge_list discovery/
 
 media_player: !include_dir_list media/
@@ -30,6 +36,13 @@ ring:
           
 binary_sensor:
   - platform: ring
+    scan_interval: 60
+  
+ffmpeg:
+  
+camera:
+  - platform: ring
+    ffmpeg_arguments: -pred 1 -q:v 2
 
 #Smart Life
 tuya:

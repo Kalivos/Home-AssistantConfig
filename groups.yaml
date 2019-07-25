@@ -1,5 +1,4 @@
 Router:
-- sensor.hass_uptime
 - sensor.google_wifi_status
 - sensor.google_wifi_uptime
 - sensor.google_wifi_last_restart
